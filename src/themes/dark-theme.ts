@@ -82,7 +82,7 @@ export const darkTheme = createTheme({
                     fontWeight: 500,
                     color: '#FFFFFF',
                     '@media (max-width: 600px)': {
-                        fontSize: 20,
+                        fontSize: 14,
                     },
                 },
                 h5: {

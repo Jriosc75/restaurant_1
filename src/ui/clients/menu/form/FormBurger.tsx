@@ -54,14 +54,40 @@ export default function FormBurger({ onCancel }: Props) {
             <Typography variant="h4" mt={2}>
                 Cremas
             </Typography>
+            <Box flexDirection={'column'} display={{ md: 'none', sm: 'none', xs: 'flex' }}>
+                {cremas.map((item) => (
+                    <Box mt={1}>
+                        <Divider />
+                        <Box
+                            mt={1}
+                            alignItems={'center'}
+                            display={'flex'}
+                            justifyContent={'space-between'}
+                        >
+                            <Typography variant="body2">{item.name}</Typography>
+                            <Checkbox
+                                size="small"
+                                icon={
+                                    <RadioButtonUncheckedIcon
+                                        sx={{ color: '#AAAAAA', opacity: 0.6 }}
+                                    />
+                                }
+                                checkedIcon={<RadioButtonCheckedIcon color="warning" />}
+                                sx={{ p: 0.5 }}
+                                name={`${item.id}_${index}`}
+                            />
+                        </Box>
+                    </Box>
+                ))}
+            </Box>
             <FormGroup
                 style={{
-                    display: 'flex',
                     flexDirection: 'row',
                     paddingLeft: 6,
                     gap: 3,
                     marginTop: 8,
                 }}
+                sx={{ display: { md: 'flex', sm: 'flex', xs: 'none' } }}
             >
                 {cremas.map((item) => (
                     <FormControlLabel
@@ -86,14 +112,43 @@ export default function FormBurger({ onCancel }: Props) {
             <Typography variant="h4" mt={2}>
                 Adicionales
             </Typography>
+            <Box flexDirection={'column'} display={{ md: 'none', sm: 'none', xs: 'flex' }}>
+                {adicionales.map((item) => (
+                    <Box mt={1}>
+                        <Divider />
+                        <Box
+                            mt={1}
+                            alignItems={'center'}
+                            display={'flex'}
+                            justifyContent={'space-between'}
+                        >
+                            <Typography variant="body2">
+                                {' '}
+                                {item.name}: S/.{item.price}
+                            </Typography>
+                            <Checkbox
+                                size="small"
+                                icon={
+                                    <RadioButtonUncheckedIcon
+                                        sx={{ color: '#AAAAAA', opacity: 0.6 }}
+                                    />
+                                }
+                                checkedIcon={<RadioButtonCheckedIcon color="warning" />}
+                                sx={{ p: 0.5 }}
+                                name={`${item.id}_${index}`}
+                            />
+                        </Box>
+                    </Box>
+                ))}
+            </Box>
             <FormGroup
                 style={{
-                    display: 'flex',
                     flexDirection: 'row',
                     paddingLeft: 6,
                     gap: 3,
                     marginTop: 8,
                 }}
+                sx={{ display: { md: 'flex', sm: 'flex', xs: 'none' } }}
             >
                 {adicionales.map((item) => (
                     <FormControlLabel

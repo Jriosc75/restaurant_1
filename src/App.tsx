@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import Menu from './pages/Menu'
 import Cart from './pages/Cart'
 import LocationRestaurant from './pages/LocationRestaurant'
+import Home from './pages/admin/Home'
 
 function App() {
     return (
@@ -13,6 +14,8 @@ function App() {
                 <Route path="/:id/menu" element={<Menu />} />
                 <Route path="/:id/location" element={<LocationRestaurant />} />
                 <Route path="/:id/cart" element={<Cart />} />
+
+                <Route path="/auth/home/:id" element={<Home />} />
             </Routes>
         </Router>
     )

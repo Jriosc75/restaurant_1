@@ -4,6 +4,7 @@ import { PrimaryPasswordInput } from '../../components/common/input/PrimaryPassw
 import Google from '../../../public/img/google.png'
 import Facebook from '../../../public/img/fb.png'
 import CloseIcon from '@mui/icons-material/Close'
+import { useNavigate } from 'react-router-dom'
 interface Props {
     onCancel: () => void
     onSwitch: () => void
@@ -11,6 +12,7 @@ interface Props {
 
 export default function Login({ onCancel, onSwitch }: Props) {
     const { palette } = useTheme()
+    const navigate = useNavigate()
     return (
         <Box position={'relative'}>
             <IconButton
@@ -67,7 +69,7 @@ export default function Login({ onCancel, onSwitch }: Props) {
                     variant="contained"
                     color="success"
                     sx={{ color: palette.primary.main, px: 6 }}
-                    onClick={onCancel}
+                    onClick={() => navigate('/auth/home/:id')}
                 >
                     Iniciar sesion
                 </Button>
