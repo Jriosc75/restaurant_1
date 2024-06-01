@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #616161;
+    border-radius: 5px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #777777;
+}
+.inputSearch {
+    border: none;
+    height: 21px;
+    font-family: 'Montserrat', sans-serif;
+}
+.inputSearch:focus {
+    outline: none; /* Esto elimina el resaltado de enfoque en algunos navegadores */
+    border: 0px solid transparent; /* Hacer el borde transparente */
+}
+.logo-sidebar {
+    height: 30px;
+    width: 30px;
+}
+@media (max-width: 600px) {
+    .logo-sidebar {
+        height: 30px;
+        width: 30px;
+    }
+}
