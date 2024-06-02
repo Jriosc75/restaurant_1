@@ -49,13 +49,13 @@ export default function Landing() {
                 display={'flex'}
                 flexDirection={'column'}
                 justifyContent={'center'}
-                sx={{ height: '100%', px: 2, py: { md: 2, xs: 3 } }}
+                sx={{ height: '100%', px: 2, py: { md: 0, xs: 3 } }}
             >
                 <Typography variant="body1" fontWeight={500} sx={{ color: 'white', fontSize: 15 }}>
                     Jamex
                 </Typography>
 
-                <Grid sx={{ height: '90%' }} container>
+                <Grid sx={{ height: '100%', my: 2 }} container>
                     <Grid
                         md={6}
                         xs={12}
