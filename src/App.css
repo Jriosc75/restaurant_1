@@ -34,9 +34,39 @@ body {
     height: 30px;
     width: 30px;
 }
+.img-landing-1 {
+    position: absolute;
+    z-index: -10;
+    left: -180px;
+    top: 170px;
+}
+.img-landing-2 {
+    position: absolute;
+    z-index: 0;
+    left: 220px;
+    bottom: 0px;
+}
+.img-landing-3 {
+    position: absolute;
+    z-index: 0;
+    left: 380px;
+    top: -40px;
+}
 @media (max-width: 600px) {
     .logo-sidebar {
         height: 30px;
         width: 30px;
+    }
+    .img-landing-2 {
+        display: none;
+    }
+    .img-landing-1 {
+        position: absolute;
+        z-index: -10;
+        left: 0px;
+        top: 120px;
+    }
+    .img-landing-3 {
+        display: none;
     }
 }

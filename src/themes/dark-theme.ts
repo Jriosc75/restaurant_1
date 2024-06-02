@@ -95,9 +95,13 @@ export const darkTheme = createTheme({
                     },
                 },
                 subtitle1: {
-                    fontSize: 14,
-                    fontWeight: 300,
+                    fontSize: 13,
+                    fontWeight: 400,
                     color: '#AAAAAA',
+                    '@media (max-width: 600px)': {
+                        fontSize: 10,
+                        fontWeight: 400,
+                    },
                 },
                 subtitle2: {
                     fontSize: 14,
