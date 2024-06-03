@@ -1,5 +1,5 @@
-import ClientLayout from '../components/sidebard/ClientLayout'
-import CrudLocation from '../ui/clients/location/CrudLocation'
+import ClientLayout from '../../components/sidebard/ClientLayout'
+import CrudLocation from '../../ui/clients/location/CrudLocation'
 
 export default function LocationRestaurant() {
     return (

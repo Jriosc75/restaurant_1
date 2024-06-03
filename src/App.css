@@ -42,13 +42,13 @@ body {
 }
 .img-landing-2 {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     left: 220px;
     bottom: 0px;
 }
 .img-landing-3 {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     left: 380px;
     top: -40px;
 }

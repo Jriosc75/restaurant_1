@@ -1,16 +1,17 @@
 import { Box, Button, IconButton, Typography, useTheme } from '@mui/material'
-import { PrimaryInput } from '../../components/common/input/PrimaryInput'
-import { PrimaryPasswordInput } from '../../components/common/input/PrimaryPasswordInput'
-import Google from '../../../public/img/google.png'
-import Facebook from '../../../public/img/fb.png'
+import { PrimaryInput } from '../../../components/common/input/PrimaryInput'
+import { PrimaryPasswordInput } from '../../../components/common/input/PrimaryPasswordInput'
+import Google from '../../../../public/img/google.png'
+import Facebook from '../../../../public/img/fb.png'
 import CloseIcon from '@mui/icons-material/Close'
 import { useNavigate } from 'react-router-dom'
 interface Props {
     onCancel: () => void
     onSwitch: () => void
+    onSwitchPassword: () => void
 }
 
-export default function Login({ onCancel, onSwitch }: Props) {
+export default function LoginAdmin({ onCancel, onSwitch, onSwitchPassword }: Props) {
     const { palette } = useTheme()
     const navigate = useNavigate()
     return (
@@ -63,13 +64,20 @@ export default function Login({ onCancel, onSwitch }: Props) {
 
             <PrimaryInput placeholder="Correo Electronico" />
             <PrimaryPasswordInput placeholder="Contraseña" style={{ marginTop: '24px' }} />
-
+            <Typography
+                variant="body2"
+                sx={{ cursor: 'pointer', width: 'fit-content' }}
+                onClick={onSwitchPassword}
+                mt={6}
+            >
+                ¿Olvidaste tu contraseña?
+            </Typography>
             <Box display={'flex'} mt={6} justifyContent={'center'}>
                 <Button
                     variant="contained"
                     color="success"
                     sx={{ color: palette.primary.main, px: 6 }}
-                    onClick={() => navigate('/auth/home/:id')}
+                    onClick={() => navigate('/auth/admin/:1212313')}
                 >
                     Iniciar sesion
                 </Button>
@@ -85,7 +93,6 @@ export default function Login({ onCancel, onSwitch }: Props) {
                     }}
                     onClick={onSwitch}
                 >
-                    {' '}
                     aqui
                 </span>
             </Typography>

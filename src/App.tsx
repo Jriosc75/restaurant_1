@@ -1,10 +1,11 @@
 import './App.css'
 import Landing from './pages/Landing'
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
-import Menu from './pages/Menu'
-import Cart from './pages/Cart'
-import LocationRestaurant from './pages/LocationRestaurant'
-import Home from './pages/admin/Home'
+import Menu from './pages/client/Menu'
+import Cart from './pages/client/Cart'
+import LocationRestaurant from './pages/client/LocationRestaurant'
+
+import PanelAdmin from './pages/admin/Panel'
 
 function App() {
     return (
@@ -15,7 +16,8 @@ function App() {
                 <Route path="/:id/location" element={<LocationRestaurant />} />
                 <Route path="/:id/cart" element={<Cart />} />
 
-                <Route path="/auth/home/:id" element={<Home />} />
+                <Route path="/auth/admin/:id" element={<PanelAdmin />} />
+                <Route path="/auth/:id" element={<h1>client vista</h1>} />
             </Routes>
         </Router>
     )

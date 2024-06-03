@@ -1,16 +1,18 @@
 import { Box, Button, IconButton, Typography, useTheme } from '@mui/material'
-import { PrimaryInput } from '../../components/common/input/PrimaryInput'
-import { PrimaryPasswordInput } from '../../components/common/input/PrimaryPasswordInput'
-import Google from '../../../public/img/google.png'
-import Facebook from '../../../public/img/fb.png'
+import { PrimaryInput } from '../../../components/common/input/PrimaryInput'
+import { PrimaryPasswordInput } from '../../../components/common/input/PrimaryPasswordInput'
+import Google from '../../../../public/img/google.png'
+import Facebook from '../../../../public/img/fb.png'
 import CloseIcon from '@mui/icons-material/Close'
+import { useNavigate } from 'react-router-dom'
 interface Props {
     onCancel: () => void
     onSwitch: () => void
 }
 
-export default function Register({ onCancel, onSwitch }: Props) {
+export default function Login({ onCancel, onSwitch }: Props) {
     const { palette } = useTheme()
+    const navigate = useNavigate()
     return (
         <Box position={'relative'}>
             <IconButton
@@ -20,7 +22,7 @@ export default function Register({ onCancel, onSwitch }: Props) {
                 <CloseIcon color="error" />
             </IconButton>
             <Typography variant="body2" mb={1}>
-                Registrate
+                Por favor inicie sesion
             </Typography>
             <Box display={'flex'} justifyContent={'space-between'}>
                 <Box
@@ -60,21 +62,20 @@ export default function Register({ onCancel, onSwitch }: Props) {
             </Typography>
 
             <PrimaryInput placeholder="Correo Electronico" />
-            <PrimaryPasswordInput placeholder="Repetir contraseña" style={{ marginTop: '24px' }} />
             <PrimaryPasswordInput placeholder="Contraseña" style={{ marginTop: '24px' }} />
 
-            <Box display={'flex'} mt={4} justifyContent={'center'}>
+            <Box display={'flex'} mt={6} justifyContent={'center'}>
                 <Button
                     variant="contained"
                     color="success"
                     sx={{ color: palette.primary.main, px: 6 }}
-                    onClick={onCancel}
+                    onClick={() => navigate('/auth/client/:121212')}
                 >
-                    Registrate
+                    Iniciar sesion
                 </Button>
             </Box>
             <Typography variant="body2" mt={6}>
-                Tengo una cuenta, quiero{' '}
+                ¿No tienes una cuenta?, registrate{' '}
                 <span
                     style={{
                         marginLeft: '2px',
@@ -85,7 +86,7 @@ export default function Register({ onCancel, onSwitch }: Props) {
                     onClick={onSwitch}
                 >
                     {' '}
-                    iniciar sesion
+                    aqui
                 </span>
             </Typography>
         </Box>

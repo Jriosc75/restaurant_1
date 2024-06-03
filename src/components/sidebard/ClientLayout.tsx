@@ -15,8 +15,8 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import Logo from '../../../public/img/logo.png'
 import { SearchInputs } from '../common/input/SearchInputs'
 import PrimaryDialog from '../common/modal/PrimaryDialog'
-import Login from '../../ui/auth/Login'
-import Register from '../../ui/auth/Register'
+import Login from '../../ui/auth/clients/Login'
+import Register from '../../ui/auth/clients/Register'
 
 interface Props {
     children: ReactNode
