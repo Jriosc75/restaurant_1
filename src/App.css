@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 ::-webkit-scrollbar {
     background-color: transparent;
@@ -24,7 +24,7 @@ body {
 .inputSearch {
     border: none;
     height: 21px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .inputSearch:focus {
     outline: none; /* Esto elimina el resaltado de enfoque en algunos navegadores */
@@ -52,7 +52,52 @@ body {
     left: 380px;
     top: -40px;
 }
-@media (max-width: 600px) {
+
+.img-food-1 {
+    height: 440px;
+    width: 440px;
+    border-radius: 10px;
+    object-fit: cover;
+    position: absolute;
+    bottom: 30px;
+    right: 8%;
+}
+
+@media (max-width: 1090px) {
+    .img-food-1 {
+        height: 800px;
+        width: 700px;
+        border-radius: 30px;
+        object-fit: cover;
+        position: absolute;
+        bottom: 100px;
+        right: 2%;
+    }
+}
+@media (max-width: 820px) {
+    .img-food-1 {
+        height: 730px;
+        width: 600px;
+        border-radius: 30px;
+        object-fit: cover;
+        position: absolute;
+        bottom: 40px;
+        right: 2%;
+    }
+}
+@media (max-width: 780px) {
+    .img-food-1 {
+        height: 600px;
+        width: 520px;
+        border-radius: 30px;
+        object-fit: cover;
+        position: absolute;
+        bottom: 40px;
+        right: 2%;
+    }
+}
+
+@media (max-width: 650px) {
     .logo-sidebar {
         height: 30px;
         width: 30px;
@@ -68,5 +113,14 @@ body {
     }
     .img-landing-3 {
         display: none;
+    }
+    .img-food-1 {
+        height: 320px;
+        width: 280px;
+        border-radius: 20px;
+        object-fit: cover;
+        position: absolute;
+        bottom: 20px;
+        right: 3%;
     }
 }

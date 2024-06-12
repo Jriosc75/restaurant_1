@@ -1,10 +1,10 @@
 import ClientLayout from '../../components/sidebard/ClientLayout'
-import CrudMenu from '../../ui/clients/menu/CrudMenu'
+import CrudFoods from '../../ui/clients/menu/CrudFoods'
 
 export default function Menu() {
     return (
         <ClientLayout search={true}>
-            <CrudMenu />
+            <CrudFoods />
         </ClientLayout>
     )
 }

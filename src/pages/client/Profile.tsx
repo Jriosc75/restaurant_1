@@ -1,10 +1,10 @@
 import ClientLayout from '../../components/sidebard/ClientLayout'
-import CrudCart from '../../ui/clients/profile/cart/CrudCart'
+import CrudProfile from '../../ui/clients/profile/CrudProfile'
 
-export default function Cart() {
+export default function Profile() {
     return (
         <ClientLayout search={false}>
-            <CrudCart />
+            <CrudProfile />
         </ClientLayout>
     )
 }

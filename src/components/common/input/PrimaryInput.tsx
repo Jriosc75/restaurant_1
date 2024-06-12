@@ -19,7 +19,7 @@ export const PrimaryInput = forwardRef(function PrimaryInput(
     const CssTextField = styled(TextField)({
         '& .MuiOutlinedInput-root': {
             background: 'transparent',
-            borderRadius: '12px',
+            borderRadius: '6px',
             border: `1px solid ${palette.background.paper}`,
             '&:hover fieldset': {
                 borderColor: 'gray',
@@ -49,7 +49,8 @@ export const PrimaryInput = forwardRef(function PrimaryInput(
             color: palette.primary.main,
         },
         '& input': {
-            height: '30px',
+            height: '24px',
+            fontWeight: 300,
             fontSize: '14px',
             color: palette.primary.main,
             '&[type="number"]': {

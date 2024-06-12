@@ -17,13 +17,13 @@ export default function PrimaryDialog({ open, children, title }: PrimaryDialogPr
             transitionDuration={400}
             sx={{
                 '& .MuiDialog-paper': {
-                    py: 4,
-                    px: { md: 5, sm: 2, xs: 2.5 },
-                    minWidth: { md: '320px', xs: '92%' },
+                    p: 0,
+                    minWidth: { md: '330px', xs: '92%' },
                     maxWidth: '500px',
                     width: '550px',
                     borderRadius: 3,
-                    background: '#252430',
+                    background:
+                        'linear-gradient(to right top, #131313, #1d1d1d, #282828, #333333, #2D2D2D)',
                 },
             }}
         >

@@ -11,7 +11,10 @@ function Muitheme({ children }: { children: React.ReactNode }) {
     const [selectedTheme] = useState<'light' | 'dark'>('dark')
 
     useEffect(() => {
-        document.body.style.backgroundColor = selectedTheme === 'light' ? '#F3F3F3' : '#252430'
+        document.body.style.background =
+            selectedTheme === 'light'
+                ? '#F3F3F3'
+                : 'linear-gradient(to right top, #131313, #1d1d1d, #282828, #333333, #646464)'
     }, [selectedTheme])
     const activeTheme = getActiveTheme(selectedTheme)
 

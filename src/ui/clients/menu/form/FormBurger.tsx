@@ -7,14 +7,15 @@ import {
     FormGroup,
     IconButton,
     Typography,
-    useTheme,
 } from '@mui/material'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined'
 import DoDisturbOnOutlinedIcon from '@mui/icons-material/DoDisturbOnOutlined'
 import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked'
 import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked'
+import RemoveIcon from '@mui/icons-material/Remove'
+import AddIcon from '@mui/icons-material/Add'
 import { useState } from 'react'
-
+import CloseIcon from '@mui/icons-material/Close'
 interface Props {
     onCancel: () => void
 }
@@ -37,7 +38,6 @@ const adicionales = [
     { id: 6, name: 'Pepinillos', price: 0.35 },
 ]
 export default function FormBurger({ onCancel }: Props) {
-    const { palette } = useTheme()
     const [quantity, setQuantity] = useState(1)
 
     const handleIncrement = () => {
@@ -72,7 +72,7 @@ export default function FormBurger({ onCancel }: Props) {
                                         sx={{ color: '#AAAAAA', opacity: 0.6 }}
                                     />
                                 }
-                                checkedIcon={<RadioButtonCheckedIcon color="warning" />}
+                                checkedIcon={<RadioButtonCheckedIcon color="secondary" />}
                                 sx={{ p: 0.5 }}
                                 name={`${item.id}_${index}`}
                             />
@@ -100,7 +100,7 @@ export default function FormBurger({ onCancel }: Props) {
                                         sx={{ color: '#AAAAAA', opacity: 0.6 }}
                                     />
                                 }
-                                checkedIcon={<RadioButtonCheckedIcon color="warning" />}
+                                checkedIcon={<RadioButtonCheckedIcon color="secondary" />}
                                 sx={{ p: 0.5 }}
                                 name={`${item.id}_${index}`}
                             />
@@ -133,7 +133,7 @@ export default function FormBurger({ onCancel }: Props) {
                                         sx={{ color: '#AAAAAA', opacity: 0.6 }}
                                     />
                                 }
-                                checkedIcon={<RadioButtonCheckedIcon color="warning" />}
+                                checkedIcon={<RadioButtonCheckedIcon color="secondary" />}
                                 sx={{ p: 0.5 }}
                                 name={`${item.id}_${index}`}
                             />
@@ -161,7 +161,7 @@ export default function FormBurger({ onCancel }: Props) {
                                         sx={{ color: '#AAAAAA', opacity: 0.6 }}
                                     />
                                 }
-                                checkedIcon={<RadioButtonCheckedIcon color="warning" />}
+                                checkedIcon={<RadioButtonCheckedIcon color="secondary" />}
                                 sx={{ p: 0.5 }}
                                 name={`${item.id}_${index}`}
                             />
@@ -177,67 +177,102 @@ export default function FormBurger({ onCancel }: Props) {
         </div>
     )
     return (
-        <form>
-            <Box display={'flex'} mb={2} alignItems={'center'} justifyContent={'space-between'}>
-                <Typography variant="h2">Nombre de la burger</Typography>
-                <Box
-                    display={'flex'}
-                    gap={1}
-                    alignItems={'center'}
-                    sx={{
-                        width: 'fit-content',
-                    }}
-                >
-                    <Typography variant="h3" fontSize={13}>
-                        Cantidad:
+        <Box position={'relative'}>
+            <IconButton sx={{ position: 'absolute', top: 15, right: 15 }} onClick={onCancel}>
+                <CloseIcon sx={{ fontSize: 24 }} color="error" />
+            </IconButton>
+            <Box sx={{ p: { md: 4, sm: 4, xs: 2 } }}>
+                <form>
+                    <Box
+                        display={'flex'}
+                        mb={0.5}
+                        mt={{ md: 0, sm: 2, xs: 2 }}
+                        alignItems={'center'}
+                        justifyContent={'space-between'}
+                    >
+                        <Typography variant="h2">Nombre de la burger</Typography>
+                        <Box
+                            display={'flex'}
+                            gap={1}
+                            alignItems={'center'}
+                            sx={{
+                                width: 'fit-content',
+                            }}
+                        ></Box>
+                    </Box>
+                    <Typography mb={3} mt={1} variant="subtitle1" lineHeight={'18px'}>
+                        ingredientes, ingredientes,ingredientes, ingredienes ingrege, indesdes,
+                        ingrediens, ingreger, inigreger inigerge, inigr ege213123
                     </Typography>
+
+                    {Array.from({ length: quantity }, (_, index) => (
+                        <Box key={index}>
+                            {index === 0 ? null : (
+                                <>
+                                    <Divider sx={{ mt: 3, mb: 2 }} />
+                                    <Typography variant="h4" mb={0.5}>
+                                        Hamburguesa {index + 1}
+                                    </Typography>
+                                    <Typography variant="body2">
+                                        Seleccione las cremas correspondientes y los adicionales que
+                                        desee
+                                    </Typography>
+                                </>
+                            )}
+
+                            {renderFormGroups(index)}
+                        </Box>
+                    ))}
+                </form>
+            </Box>
+
+            <Box
+                height={56}
+                position={'relative'}
+                right={0}
+                width={'100%'}
+                display={'flex'}
+                justifyContent={'end'}
+            >
+                <Box
+                    width={'130px'}
+                    display={'flex'}
+                    justifyContent={'center'}
+                    alignItems={'center'}
+                    sx={{ background: '#518BE1', borderTopLeftRadius: 32 }}
+                >
+                    <Typography variant="h2" sx={{ mt: 0.5 }}>
+                        Total: S/. 405
+                    </Typography>
+                </Box>
+                <Box
+                    width={'300px'}
+                    height={'100%'}
+                    display="flex"
+                    alignItems={'center'}
+                    justifyContent={'space-around'}
+                    sx={{ background: '#1D1D1D', py: 2 }}
+                >
                     <Box display={'flex'} alignItems={'center'}>
                         <IconButton
                             sx={{ p: 0.4 }}
                             onClick={handleDecrement}
                             disabled={quantity === 1}
                         >
-                            <DoDisturbOnOutlinedIcon fontSize="small" />
+                            <RemoveIcon fontSize="small" />
                         </IconButton>
                         <Typography variant="h2" fontSize={19} sx={{ px: 0.5 }}>
                             {quantity}
                         </Typography>
                         <IconButton sx={{ p: 0.4 }} onClick={handleIncrement}>
-                            <AddCircleOutlineOutlinedIcon fontSize="small" />
+                            <AddIcon fontSize="small" />
                         </IconButton>
                     </Box>
+                    <Button variant="contained" color="success">
+                        Agregar al carrito
+                    </Button>
                 </Box>
             </Box>
-            <Typography variant="body2">
-                ingredientes, ingredientes,ingredientes, ingredienes ingrege, indesdes, ingrediens,
-                ingreger, inigreger inigerge, inigr ege213123
-            </Typography>
-
-            {Array.from({ length: quantity }, (_, index) => (
-                <Box key={index}>
-                    {index === 0 ? null : (
-                        <>
-                            <Divider sx={{ mt: 3, mb: 2 }} />
-                            <Typography variant="h4" mb={0.5}>
-                                Hamburguesa {index + 1}
-                            </Typography>
-                            <Typography variant="body2">
-                                Seleccione las cremas correspondientes y los adicionales que desee
-                            </Typography>
-                        </>
-                    )}
-
-                    {renderFormGroups(index)}
-                </Box>
-            ))}
-            <Box mt={4} display={'flex'} justifyContent={'center'} gap={2}>
-                <Button variant="text" sx={{ color: palette.primary.main }} onClick={onCancel}>
-                    Cancelar
-                </Button>
-                <Button variant="contained" color="success">
-                    Agregar al carrito
-                </Button>
-            </Box>
-        </form>
+        </Box>
     )
 }
