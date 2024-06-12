@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Dialog, IconButton, Slide, Toolbar, Typography } from '@mui/material'
+import { AppBar, Box, Dialog, IconButton, Slide, Toolbar, Typography } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import { ReactNode, forwardRef } from 'react'
 import { TransitionProps } from '@mui/material/transitions'

@@ -13,7 +13,6 @@ import { ReactNode, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useLocation, useNavigate } from 'react-router-dom'
 import Logo from '../../../public/img/logo.png'
-import { SearchInputs } from '../common/input/SearchInputs'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
 
@@ -28,7 +27,7 @@ interface Props {
     children: ReactNode
     search: boolean
 }
-export default function ClientLayout({ children, search = true }: Props) {
+export default function ClientLayout({ children }: Props) {
     const navigate = useNavigate()
     const { palette } = useTheme()
     const params = useLocation()

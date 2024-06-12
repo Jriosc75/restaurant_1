@@ -1,5 +1,5 @@
-import { Box, Divider, IconButton, Typography, useTheme } from '@mui/material'
-import VisibilityIcon from '@mui/icons-material/Visibility'
+import { Box, Divider, Typography, useTheme } from '@mui/material'
+
 export default function CrudHistory() {
     const { palette } = useTheme()
     return (

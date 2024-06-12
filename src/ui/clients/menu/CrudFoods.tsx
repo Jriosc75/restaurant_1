@@ -1,11 +1,9 @@
-import { Box, IconButton, Typography, keyframes } from '@mui/material'
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
-import MenuIcon from '@mui/icons-material/Menu'
+import { Box, Typography, keyframes } from '@mui/material'
+
 import food from '../../../../public/img/foto2.jpg'
 import arrow from '../../../../public/img/Arrow.png'
 import PrimaryButton from '../../../components/common/button/PrimaryButton'
-import logo from '../../../../public/img/logo.png'
+
 import { useState } from 'react'
 import PrimaryDialog from '../../../components/common/modal/PrimaryDialog'
 import FormBurger from './form/FormBurger'
