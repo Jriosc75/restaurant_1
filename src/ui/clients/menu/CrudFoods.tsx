@@ -28,9 +28,10 @@ export default function CrudFoods() {
             <Box maxWidth={1100} mx={'auto'}>
                 <Box
                     display={'flex'}
-                    height={{ sm: 'calc(100vh - 160px)', xs: 'calc(100vh - 146px)' }}
+                    minHeight={{ sm: 'calc(100vh - 160px)', xs: 'calc(100vh - 186px)' }}
                     flexDirection={'column'}
                     justifyContent={'space-between'}
+                    border={'1px solid red'}
                 >
                     <Box mb={3}>
                         <Box display={'flex'} justifyContent={'space-between'}>
@@ -78,6 +79,43 @@ export default function CrudFoods() {
                             Pecio: S/ 12.00
                         </Typography>
                         <PrimaryButton onClick={() => setOpen(true)} text="Agregar al carrito" />
+                    </Box>
+
+                    <Box
+                        display={{ md: 'none', sm: 'none', xs: 'flex' }}
+                        justifyContent={'end'}
+                        gap={4}
+                        mb={9}
+                    >
+                        <Typography
+                            variant="subtitle2"
+                            fontSize={14}
+                            sx={{
+                                fontSize: { md: 14, xs: 16 },
+                                opacity: 0.5,
+                                ':hover': {
+                                    opacity: 1,
+                                    cursor: 'pointer',
+                                    borderBottom: '1px solid white',
+                                },
+                            }}
+                        >
+                            Atrás
+                        </Typography>
+                        <Typography
+                            sx={{
+                                opacity: 0.5,
+                                fontSize: { md: 14, xs: 16 },
+                                ':hover': {
+                                    opacity: 1,
+                                    cursor: 'pointer',
+                                    borderBottom: '1px solid white',
+                                },
+                            }}
+                            variant="subtitle2"
+                        >
+                            Siguiente
+                        </Typography>
                     </Box>
                     <Box
                         width={'120px'}
