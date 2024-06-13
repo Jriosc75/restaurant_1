@@ -218,7 +218,7 @@ export default function ClientLayout({ children }: Props) {
                     </Box>
                 </AppBar>
 
-                <Box minHeight={'calc(100vh - 77px)'} border={'1px solid blue'}>
+                <Box minHeight={{ md: 'calc(100vh - 77px)', xs: 'auto' }} border={'1px solid blue'}>
                     {children}
                 </Box>
                 <Drawer
