@@ -28,10 +28,9 @@ export default function CrudFoods() {
             <Box maxWidth={1100} mx={'auto'}>
                 <Box
                     display={'flex'}
-                    minHeight={{ sm: 'calc(100vh - 160px)', xs: 'calc(100vh - 186px)' }}
+                    minHeight={{ sm: 'calc(100vh - 160px)', xs: 'calc(100vh - 77px)' }}
                     flexDirection={'column'}
                     justifyContent={'space-between'}
-                    border={'1px solid red'}
                 >
                     <Box mb={3}>
                         <Box display={'flex'} justifyContent={'space-between'}>
@@ -85,7 +84,7 @@ export default function CrudFoods() {
                         display={{ md: 'none', sm: 'none', xs: 'flex' }}
                         justifyContent={'end'}
                         gap={4}
-                        mb={3}
+                        mb={2}
                     >
                         <Typography
                             variant="subtitle2"
@@ -116,7 +115,12 @@ export default function CrudFoods() {
                             Siguiente
                         </Typography>
                     </Box>
-                    <Box display={'flex'} justifyContent={'space-between'}>
+                    <Box
+                        display={'flex'}
+                        justifyContent={'space-between'}
+                        position={'relative'}
+                        alignItems={'end'}
+                    >
                         <Box
                             width={'120px'}
                             display={'flex'}
@@ -132,12 +136,13 @@ export default function CrudFoods() {
                                     display: 'block',
                                 },
                             }}
+                            mb={2}
                         >
                             <img src={arrow} height={50} width={10} />
                             <Typography
                                 className="shawarmaText"
                                 variant="subtitle1"
-                                ml={1}
+                                ml={{ md: 1, xs: 0 }}
                                 sx={{
                                     display: 'none',
                                     transform: 'rotate(180deg)',
@@ -146,6 +151,33 @@ export default function CrudFoods() {
                                 Shawarmas
                             </Typography>
                         </Box>
+                        <Box
+                            sx={{
+                                background:
+                                    'linear-gradient(to right top, #646464, #696868, #4c4b4c, #313131, #181818)',
+                                height: '60%',
+                                width: '45%',
+                                position: 'absolute',
+                                display: 'none',
+                                right: 0,
+                                bottom: 0,
+                                borderTopLeftRadius: '100px',
+                                '@media (max-width: 1090px)': {
+                                    height: '50%',
+                                    width: '50%',
+                                    borderTopLeftRadius: '50px',
+                                },
+                                '@media (max-width: 650px)': {
+                                    height: '220px',
+                                    width: '230px',
+                                    bottom: 0,
+                                    right: -8,
+                                    zIndex: -1,
+                                    borderRadius: '10px',
+                                    display: 'flex',
+                                },
+                            }}
+                        ></Box>
                         <img src={food} height={'450px'} width={'450px'} className="img-food-1-2" />
                     </Box>
                 </Box>

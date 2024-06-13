@@ -52,32 +52,7 @@ export default function FormBurger({ onCancel }: Props) {
             <Typography variant="h4" mt={2}>
                 Cremas
             </Typography>
-            <Box flexDirection={'column'} display={{ md: 'none', sm: 'none', xs: 'flex' }}>
-                {cremas.map((item) => (
-                    <Box mt={1}>
-                        <Divider />
-                        <Box
-                            mt={1}
-                            alignItems={'center'}
-                            display={'flex'}
-                            justifyContent={'space-between'}
-                        >
-                            <Typography variant="body2">{item.name}</Typography>
-                            <Checkbox
-                                size="small"
-                                icon={
-                                    <RadioButtonUncheckedIcon
-                                        sx={{ color: '#AAAAAA', opacity: 0.6 }}
-                                    />
-                                }
-                                checkedIcon={<RadioButtonCheckedIcon color="secondary" />}
-                                sx={{ p: 0.5 }}
-                                name={`${item.id}_${index}`}
-                            />
-                        </Box>
-                    </Box>
-                ))}
-            </Box>
+
             <FormGroup
                 style={{
                     flexDirection: 'row',
@@ -85,7 +60,7 @@ export default function FormBurger({ onCancel }: Props) {
                     gap: 3,
                     marginTop: 8,
                 }}
-                sx={{ display: { md: 'flex', sm: 'flex', xs: 'none' } }}
+                sx={{ display: { md: 'flex', sm: 'flex', xs: 'flex' } }}
             >
                 {cremas.map((item) => (
                     <FormControlLabel
@@ -110,35 +85,7 @@ export default function FormBurger({ onCancel }: Props) {
             <Typography variant="h4" mt={2}>
                 Adicionales
             </Typography>
-            <Box flexDirection={'column'} display={{ md: 'none', sm: 'none', xs: 'flex' }}>
-                {adicionales.map((item) => (
-                    <Box mt={1}>
-                        <Divider />
-                        <Box
-                            mt={1}
-                            alignItems={'center'}
-                            display={'flex'}
-                            justifyContent={'space-between'}
-                        >
-                            <Typography variant="body2">
-                                {' '}
-                                {item.name}: S/.{item.price}
-                            </Typography>
-                            <Checkbox
-                                size="small"
-                                icon={
-                                    <RadioButtonUncheckedIcon
-                                        sx={{ color: '#AAAAAA', opacity: 0.6 }}
-                                    />
-                                }
-                                checkedIcon={<RadioButtonCheckedIcon color="secondary" />}
-                                sx={{ p: 0.5 }}
-                                name={`${item.id}_${index}`}
-                            />
-                        </Box>
-                    </Box>
-                ))}
-            </Box>
+
             <FormGroup
                 style={{
                     flexDirection: 'row',
@@ -146,7 +93,7 @@ export default function FormBurger({ onCancel }: Props) {
                     gap: 3,
                     marginTop: 8,
                 }}
-                sx={{ display: { md: 'flex', sm: 'flex', xs: 'none' } }}
+                sx={{ display: { md: 'flex', sm: 'flex', xs: 'flex' } }}
             >
                 {adicionales.map((item) => (
                     <FormControlLabel
@@ -233,7 +180,7 @@ export default function FormBurger({ onCancel }: Props) {
                 justifyContent={'end'}
             >
                 <Box
-                    width={'130px'}
+                    width={{ md: '130px', xs: '100px' }}
                     display={'flex'}
                     justifyContent={'center'}
                     alignItems={'center'}
@@ -244,7 +191,7 @@ export default function FormBurger({ onCancel }: Props) {
                     </Typography>
                 </Box>
                 <Box
-                    width={'300px'}
+                    width={'220px'}
                     height={'100%'}
                     display="flex"
                     alignItems={'center'}

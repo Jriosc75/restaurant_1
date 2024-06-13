@@ -21,6 +21,20 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background-color: #777777;
 }
+.containergrid {
+    display: grid;
+    border: 1px solid rgb(255, 0, 98);
+    grid-template-columns: repeat(auto-fill, minmax(1fr));
+    justify-content: start;
+    align-items: start;
+}
+
+.containergrid > .item {
+    width: auto;
+    border: 1px solid yellow;
+    height: auto;
+    margin: auto;
+}
 .inputSearch {
     border: none;
     height: 21px;
