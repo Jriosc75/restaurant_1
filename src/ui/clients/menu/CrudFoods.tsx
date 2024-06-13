@@ -91,7 +91,6 @@ export default function CrudFoods() {
                             variant="subtitle2"
                             fontSize={14}
                             sx={{
-                                fontSize: { md: 14, xs: 16 },
                                 opacity: 0.5,
                                 ':hover': {
                                     opacity: 1,
@@ -105,7 +104,7 @@ export default function CrudFoods() {
                         <Typography
                             sx={{
                                 opacity: 0.5,
-                                fontSize: { md: 14, xs: 16 },
+
                                 ':hover': {
                                     opacity: 1,
                                     cursor: 'pointer',
