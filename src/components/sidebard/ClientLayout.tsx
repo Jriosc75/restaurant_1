@@ -218,9 +218,7 @@ export default function ClientLayout({ children }: Props) {
                     </Box>
                 </AppBar>
 
-                <Box minHeight={'calc(100vh - 77px)'} border={'1px solid blue'}>
-                    {children}
-                </Box>
+                <Box border={'1px solid blue'}>{children}</Box>
                 <Drawer
                     sx={{
                         '& .MuiDrawer-paper': {
