@@ -32,7 +32,7 @@ export default function CrudFoods() {
                     flexDirection={'column'}
                     justifyContent={'space-between'}
                 >
-                    <Box mb={3}>
+                    <Box mb={1}>
                         <Box display={'flex'} justifyContent={'space-between'}>
                             <Typography variant="subtitle2" fontSize={{ md: 16, sx: 13 }}>
                                 Hamburguesas
@@ -81,41 +81,6 @@ export default function CrudFoods() {
                     </Box>
 
                     <Box
-                        display={{ md: 'none', sm: 'none', xs: 'flex' }}
-                        justifyContent={'end'}
-                        gap={4}
-                        mb={2}
-                    >
-                        <Typography
-                            variant="subtitle2"
-                            fontSize={14}
-                            sx={{
-                                opacity: 0.5,
-                                ':hover': {
-                                    opacity: 1,
-                                    cursor: 'pointer',
-                                    borderBottom: '1px solid white',
-                                },
-                            }}
-                        >
-                            Atrás
-                        </Typography>
-                        <Typography
-                            sx={{
-                                opacity: 0.5,
-
-                                ':hover': {
-                                    opacity: 1,
-                                    cursor: 'pointer',
-                                    borderBottom: '1px solid white',
-                                },
-                            }}
-                            variant="subtitle2"
-                        >
-                            Siguiente
-                        </Typography>
-                    </Box>
-                    <Box
                         display={'flex'}
                         justifyContent={'space-between'}
                         position={'relative'}
@@ -145,40 +110,85 @@ export default function CrudFoods() {
                                 ml={{ md: 1, xs: 0 }}
                                 sx={{
                                     display: 'none',
-                                    transform: 'rotate(180deg)',
+                                    '@media (max-width: 680px)': {
+                                        display: 'none',
+                                        fontSize: 0,
+                                    },
                                 }}
                             >
                                 Shawarmas
                             </Typography>
                         </Box>
-                        <Box
-                            sx={{
-                                background:
-                                    'linear-gradient(to right top, #646464, #696868, #4c4b4c, #313131, #181818)',
-                                height: '60%',
-                                width: '45%',
-                                position: 'absolute',
-                                display: 'none',
-                                right: 0,
-                                bottom: 0,
-                                borderTopLeftRadius: '100px',
-                                '@media (max-width: 1090px)': {
-                                    height: '50%',
-                                    width: '50%',
-                                    borderTopLeftRadius: '50px',
-                                },
-                                '@media (max-width: 650px)': {
-                                    height: '220px',
-                                    width: '230px',
+                        <Box>
+                            <Box
+                                display={{ md: 'none', sm: 'none', xs: 'flex' }}
+                                justifyContent={'end'}
+                                gap={4}
+                                mb={2}
+                            >
+                                <Typography
+                                    variant="subtitle2"
+                                    fontSize={14}
+                                    sx={{
+                                        opacity: 0.5,
+                                        ':hover': {
+                                            opacity: 1,
+                                            cursor: 'pointer',
+                                            borderBottom: '1px solid white',
+                                        },
+                                    }}
+                                >
+                                    Atrás
+                                </Typography>
+                                <Typography
+                                    sx={{
+                                        opacity: 0.5,
+
+                                        ':hover': {
+                                            opacity: 1,
+                                            cursor: 'pointer',
+                                            borderBottom: '1px solid white',
+                                        },
+                                    }}
+                                    variant="subtitle2"
+                                >
+                                    Siguiente
+                                </Typography>
+                            </Box>
+                            <Box
+                                sx={{
+                                    background:
+                                        'linear-gradient(to right top, #646464, #696868, #4c4b4c, #313131, #181818)',
+                                    height: '60%',
+                                    width: '45%',
+                                    position: 'absolute',
+                                    display: 'none',
+                                    right: 0,
                                     bottom: 0,
-                                    right: -8,
-                                    zIndex: -1,
-                                    borderRadius: '10px',
-                                    display: 'flex',
-                                },
-                            }}
-                        ></Box>
-                        <img src={food} height={'450px'} width={'450px'} className="img-food-1-2" />
+                                    borderTopLeftRadius: '100px',
+                                    '@media (max-width: 1090px)': {
+                                        height: '50%',
+                                        width: '50%',
+                                        borderTopLeftRadius: '50px',
+                                    },
+                                    '@media (max-width: 650px)': {
+                                        height: '220px',
+                                        width: '230px',
+                                        bottom: 0,
+                                        right: -8,
+                                        zIndex: -1,
+                                        borderRadius: '10px',
+                                        display: 'flex',
+                                    },
+                                }}
+                            ></Box>
+                            <img
+                                src={food}
+                                height={'450px'}
+                                width={'450px'}
+                                className="img-food-1-2"
+                            />
+                        </Box>
                     </Box>
                 </Box>
             </Box>
