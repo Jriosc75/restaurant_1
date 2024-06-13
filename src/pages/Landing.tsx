@@ -120,11 +120,20 @@ export default function Landing() {
                     <Box
                         display={'flex'}
                         mt={{ md: 0, xs: 6 }}
-                        sx={{ justifyContent: { md: 'start', xs: 'center' } }}
+                        sx={{ justifyContent: { md: 'start', xs: 'space-between' } }}
                         alignItems={'center'}
                         gap={1}
                     >
-                        <Typography variant="subtitle1">By Jorick</Typography>
+                        <Typography
+                            variant="subtitle1"
+                            sx={{
+                                '@media (max-width: 680px)': {
+                                    fontSize: 12,
+                                },
+                            }}
+                        >
+                            By Jorick
+                        </Typography>
                         <Box
                             height={15}
                             width={2}
@@ -132,7 +141,12 @@ export default function Landing() {
                         ></Box>
                         <Typography
                             variant="subtitle1"
-                            sx={{ ':hover': { cursor: 'pointer', color: 'white' } }}
+                            sx={{
+                                '@media (max-width: 680px)': {
+                                    fontSize: 12,
+                                },
+                                ':hover': { cursor: 'pointer', color: 'white' },
+                            }}
                         >
                             Prolitcas de privacidad
                         </Typography>
@@ -144,7 +158,12 @@ export default function Landing() {
 
                         <Typography
                             variant="subtitle1"
-                            sx={{ ':hover': { cursor: 'pointer', color: 'white' } }}
+                            sx={{
+                                '@media (max-width: 680px)': {
+                                    fontSize: 12,
+                                },
+                                ':hover': { cursor: 'pointer', color: 'white' },
+                            }}
                         >
                             Terminos y condiciones
                         </Typography>
@@ -152,16 +171,7 @@ export default function Landing() {
                 </Box>
             </Box>
 
-            <PrimaryDialog
-                open={open}
-                title={
-                    status === 'login'
-                        ? 'Bienvenido'
-                        : status === 'register'
-                          ? 'Registrate'
-                          : 'Nueva contraseña'
-                }
-            >
+            <PrimaryDialog open={open}>
                 {status === 'login' && (
                     <LoginAdmin
                         onCancel={onCancel}

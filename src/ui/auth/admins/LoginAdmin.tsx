@@ -15,17 +15,26 @@ export default function LoginAdmin({ onCancel, onSwitch, onSwitchPassword }: Pro
     const { palette } = useTheme()
     const navigate = useNavigate()
     return (
-        <Box position={'relative'}>
+        <Box position={'relative'} sx={{ p: { md: 4, sm: 4, xs: 2 } }}>
             <IconButton
                 onClick={onCancel}
-                sx={{ position: 'absolute', top: -45, right: 0, zIndex: 10 }}
+                sx={{ position: 'absolute', top: 12, right: 8, zIndex: 10 }}
             >
                 <CloseIcon color="error" />
             </IconButton>
+            <Typography
+                variant="h2"
+                sx={{ fontSize: { md: 24, xs: 24 } }}
+                textAlign={'center'}
+                mb={3}
+            >
+                Bienvenidos
+            </Typography>
+
             <Typography variant="body2" mb={1}>
                 Por favor inicie sesion
             </Typography>
-            <Box display={'flex'} justifyContent={'space-between'}>
+            <Box mb={3} display={'flex'} justifyContent={'space-between'}>
                 <Box
                     sx={{
                         width: '48%',
@@ -58,12 +67,8 @@ export default function LoginAdmin({ onCancel, onSwitch, onSwitchPassword }: Pro
                 </Box>
             </Box>
 
-            <Typography variant="body2" mb={1} mt={4}>
-                Con correo electronico
-            </Typography>
-
-            <PrimaryInput placeholder="Correo Electronico" />
-            <PrimaryPasswordInput placeholder="Contraseña" style={{ marginTop: '24px' }} />
+            <PrimaryInput label={'Correo electronico'} placeholder="email" />
+            <PrimaryPasswordInput label={'Contraseña'} placeholder="**********" />
             <Typography
                 variant="body2"
                 sx={{ cursor: 'pointer', width: 'fit-content' }}
@@ -72,7 +77,7 @@ export default function LoginAdmin({ onCancel, onSwitch, onSwitchPassword }: Pro
             >
                 ¿Olvidaste tu contraseña?
             </Typography>
-            <Box display={'flex'} mt={6} justifyContent={'center'}>
+            <Box display={'flex'} mt={4} justifyContent={'center'}>
                 <Button
                     variant="contained"
                     color="success"
@@ -87,7 +92,7 @@ export default function LoginAdmin({ onCancel, onSwitch, onSwitchPassword }: Pro
                 <span
                     style={{
                         marginLeft: '2px',
-                        fontWeight: 600,
+                        fontWeight: 500,
                         color: palette.primary.main,
                         cursor: 'pointer',
                     }}

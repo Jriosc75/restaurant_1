@@ -1,6 +1,3 @@
-import InboxIcon from '@mui/icons-material/MoveToInbox'
-
-import MailIcon from '@mui/icons-material/Mail'
 import MenuIcon from '@mui/icons-material/Menu'
 import { ReactNode, useState } from 'react'
 import {
@@ -13,8 +10,6 @@ import {
     List,
     ListItem,
     ListItemButton,
-    ListItemIcon,
-    ListItemText,
     Toolbar,
     Typography,
 } from '@mui/material'
@@ -50,26 +45,12 @@ export default function AdminLayout({ children, window }: Props) {
             <Toolbar />
             <Divider />
             <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                {['Perfil', 'Manu', 'Clientes', 'Cerrar sesion'].map((text) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
+                            <Typography ml={2} variant="subtitle1">
+                                {text}
+                            </Typography>
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -88,9 +69,14 @@ export default function AdminLayout({ children, window }: Props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+
+                    background: 'transparent',
+                    boxShadow: 'none',
+                    p: 0,
                 }}
             >
-                <Toolbar>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Typography variant="h2">Responsive drawer</Typography>
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
@@ -100,9 +86,6 @@ export default function AdminLayout({ children, window }: Props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
-                    </Typography>
                 </Toolbar>
             </AppBar>
             <Box
@@ -121,7 +104,12 @@ export default function AdminLayout({ children, window }: Props) {
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': {
+                            background: '#1D1D1D',
+                            boxSizing: 'border-box',
+                            width: drawerWidth,
+                            borderRight: 'transparent',
+                        },
                     }}
                 >
                     {drawer}
@@ -130,7 +118,12 @@ export default function AdminLayout({ children, window }: Props) {
                     variant="permanent"
                     sx={{
                         display: { xs: 'none', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': {
+                            background: '#1D1D1D',
+                            boxSizing: 'border-box',
+                            width: drawerWidth,
+                            borderRight: 'transparent',
+                        },
                     }}
                     open
                 >
@@ -139,8 +132,12 @@ export default function AdminLayout({ children, window }: Props) {
             </Box>
             <Box
                 component="main"
-                mt={8}
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+                sx={{
+                    minHeight: 'calc(100vh - 0px)',
+                    flexGrow: 1,
+                    p: { md: '80px 16px 16px 16px', xs: '62px 16px 16px 16px' },
+                    width: { sm: `calc(100% - ${drawerWidth}px)` },
+                }}
             >
                 {children}
             </Box>

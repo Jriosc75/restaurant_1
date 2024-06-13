@@ -1,4 +1,4 @@
-import { Box, Typography, keyframes } from '@mui/material'
+import { Box, Button, Typography, keyframes } from '@mui/material'
 
 import food from '../../../../public/img/foto2.jpg'
 import arrow from '../../../../public/img/Arrow.png'
@@ -123,37 +123,35 @@ export default function CrudFoods() {
                             <Box
                                 display={{ md: 'none', sm: 'none', xs: 'flex' }}
                                 justifyContent={'end'}
-                                gap={4}
-                                mb={2}
+                                gap={1}
+                                mb={1}
                             >
-                                <Typography
-                                    variant="subtitle2"
-                                    fontSize={14}
+                                <Button
+                                    variant="text"
                                     sx={{
+                                        fontSize: 14,
                                         opacity: 0.5,
                                         ':hover': {
                                             opacity: 1,
                                             cursor: 'pointer',
-                                            borderBottom: '1px solid white',
                                         },
                                     }}
                                 >
                                     Atrás
-                                </Typography>
-                                <Typography
+                                </Button>
+                                <Button
+                                    variant="text"
                                     sx={{
+                                        fontSize: 14,
                                         opacity: 0.5,
-
                                         ':hover': {
                                             opacity: 1,
                                             cursor: 'pointer',
-                                            borderBottom: '1px solid white',
                                         },
                                     }}
-                                    variant="subtitle2"
                                 >
                                     Siguiente
-                                </Typography>
+                                </Button>
                             </Box>
                             <Box
                                 sx={{
