@@ -115,8 +115,8 @@ body {
         display: none;
     }
     .img-food-1 {
-        height: 320px;
-        width: 280px;
+        height: 240px;
+        width: 230px;
         border-radius: 20px;
         object-fit: cover;
         position: absolute;
