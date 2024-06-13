@@ -62,6 +62,9 @@ body {
     bottom: 30px;
     right: 8%;
 }
+.img-food-1-2 {
+    display: none;
+}
 
 @media (max-width: 1090px) {
     .img-food-1 {
@@ -122,5 +125,13 @@ body {
         position: absolute;
         bottom: 20px;
         right: 3%;
+        display: none;
+    }
+    .img-food-1-2 {
+        display: flex;
+        height: 240px;
+        width: 230px;
+        border-radius: 20px;
+        object-fit: cover;
     }
 }

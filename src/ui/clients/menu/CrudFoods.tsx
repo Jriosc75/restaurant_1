@@ -85,7 +85,7 @@ export default function CrudFoods() {
                         display={{ md: 'none', sm: 'none', xs: 'flex' }}
                         justifyContent={'end'}
                         gap={4}
-                        mb={20}
+                        mb={3}
                     >
                         <Typography
                             variant="subtitle2"
@@ -116,34 +116,37 @@ export default function CrudFoods() {
                             Siguiente
                         </Typography>
                     </Box>
-                    <Box
-                        width={'120px'}
-                        display={'flex'}
-                        alignItems={'center'}
-                        sx={{
-                            opacity: 0.5,
-                            ':hover': {
-                                opacity: 1,
-                                cursor: 'pointer',
-                            },
-                            ':hover .shawarmaText': {
-                                animation: `${fadeInLeft} 0.5s ease forwards`,
-                                display: 'block',
-                            },
-                        }}
-                    >
-                        <img src={arrow} height={50} width={10} />
-                        <Typography
-                            className="shawarmaText"
-                            variant="subtitle1"
-                            ml={1}
+                    <Box display={'flex'} justifyContent={'space-between'}>
+                        <Box
+                            width={'120px'}
+                            display={'flex'}
+                            alignItems={'center'}
                             sx={{
-                                display: 'none',
-                                transform: 'rotate(180deg)',
+                                opacity: 0.5,
+                                ':hover': {
+                                    opacity: 1,
+                                    cursor: 'pointer',
+                                },
+                                ':hover .shawarmaText': {
+                                    animation: `${fadeInLeft} 0.5s ease forwards`,
+                                    display: 'block',
+                                },
                             }}
                         >
-                            Shawarmas
-                        </Typography>
+                            <img src={arrow} height={50} width={10} />
+                            <Typography
+                                className="shawarmaText"
+                                variant="subtitle1"
+                                ml={1}
+                                sx={{
+                                    display: 'none',
+                                    transform: 'rotate(180deg)',
+                                }}
+                            >
+                                Shawarmas
+                            </Typography>
+                        </Box>
+                        <img src={food} height={'450px'} width={'450px'} className="img-food-1-2" />
                     </Box>
                 </Box>
             </Box>
@@ -171,6 +174,7 @@ export default function CrudFoods() {
                         height: '35%',
                         width: '60%',
                         borderTopLeftRadius: '50px',
+                        display: 'none',
                     },
                 }}
             ></Box>
