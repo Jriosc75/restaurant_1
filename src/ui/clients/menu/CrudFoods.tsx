@@ -85,7 +85,7 @@ export default function CrudFoods() {
                         display={{ md: 'none', sm: 'none', xs: 'flex' }}
                         justifyContent={'end'}
                         gap={4}
-                        mb={9}
+                        mb={20}
                     >
                         <Typography
                             variant="subtitle2"
